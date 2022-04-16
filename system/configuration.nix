@@ -53,19 +53,16 @@
   nix = {
     package = pkgs.nixFlakes;
     trustedUsers = [ "root" "trh" "@wheel" ];
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
+    extraOptions = lib.optionalString (config.nix.package == pkgs.nixFlakes)
+      "experimental-features = nix-command flakes";
   };
 
   # User account
-  users = {
-    users.trh = {
-      isNormalUser = true;
-      initialPassword = "trh";
-      extraGroups = [ "wheel" "networkmanager" "docker" ];
-      shell = pkgs.bash;
-    };
+  users.users.trh = {
+    isNormalUser = true;
+    initialPassword = "trh";
+    extraGroups = [ "wheel" "networkmanager" "docker" ];
+    shell = pkgs.bash;
   };
 
   # List packages installed in system profile. To search, run:
