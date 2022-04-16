@@ -1,0 +1,38 @@
+#!/bin/sh
+
+while [ "$1" ]; do
+  case $1 in
+    help)
+      printf "\033[0;32musage: \033[0;0mhey \033[38;5;8m[command]\n\n"
+      printf "\033[0;32mavailable commands:\033[0;0m\n"
+      printf "    update\n"
+      printf "    user\n"
+      printf "    system\n"
+      printf "    upgrade\n"
+      exit ;;
+    update)
+      nix flake update "$HOME/.dotfiles" --commit-lock-file
+      exit ;;
+    user)
+      pushd "$HOME/.dotfiles"
+      nix build ".#homeManagerConfigurations.trh.activationPackage" && ./result/activate && rm result
+      popd
+      exit ;;
+    system)
+      sudo nixos-rebuild switch --flake "$HOME/.dotfiles#"
+      exit ;;
+    upgrade)
+      nix flake update "$HOME/.dotfiles" --commit-lock-file
+
+      sudo nixos-rebuild switch --flake "$HOME/.dotfiles#"
+
+      pushd "$HOME/.dotfiles"
+      nix build ".#homeManagerConfigurations.trh.activationPackage" && ./result/activate && rm result
+      popd
+
+      exit ;;
+    *)
+      printf "\033[0;31merr: invalid command\n"
+      exit ;;
+  esac
+done
