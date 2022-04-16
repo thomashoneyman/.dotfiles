@@ -53,8 +53,9 @@
   nix = {
     package = pkgs.nixFlakes;
     trustedUsers = [ "root" "trh" "@wheel" ];
-    extraOptions = lib.optionalString (config.nix.package == pkgs.nixFlakes)
-      "experimental-features = nix-command flakes";
+    extraOptions = ''
+      experimental-features = nix-command flakes
+   '';
   };
 
   # User account
