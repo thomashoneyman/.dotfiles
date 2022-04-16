@@ -13,6 +13,7 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Set time zone.
   time.timeZone = "America/New_York";
@@ -55,7 +56,7 @@
     trustedUsers = [ "root" "trh" "@wheel" ];
     extraOptions = ''
       experimental-features = nix-command flakes
-   '';
+    '';
   };
 
   # User account
