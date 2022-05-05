@@ -19,12 +19,12 @@ while [ "$1" ]; do
       popd
       exit ;;
     system)
-      sudo nixos-rebuild switch --flake "$HOME/.dotfiles#"
+      nixos-rebuild build --flake "$HOME/.dotfiles#" && sudo ./result/activate && rm result
       exit ;;
     upgrade)
       nix flake update "$HOME/.dotfiles" --commit-lock-file
 
-      sudo nixos-rebuild switch --flake "$HOME/.dotfiles#"
+      nixos-rebuild build --flake "$HOME/.dotfiles#" && sudo ./result/activate && rm result
 
       pushd "$HOME/.dotfiles"
       nix build ".#homeManagerConfigurations.trh.activationPackage" && ./result/activate && rm result
