@@ -11,6 +11,8 @@
   ];
 
   fonts.fontconfig = {
+    antialias = true;
+    hinting.enable = true;
     defaultFonts = {
       monospace = [ "Hasklig" ];
       sansSerif = [ "Source Sans Pro" ];
