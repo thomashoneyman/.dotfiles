@@ -10,9 +10,6 @@
     noto-fonts-emoji-blob-bin
   ];
 
-  fonts.fontconfig.antialias = true;
-  fonts.fontconfig.hinting.enable = false;
-
   fonts.fontconfig = {
     defaultFonts = {
       monospace = [ "Hasklig" ];
