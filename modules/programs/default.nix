@@ -5,7 +5,6 @@
     discord
     spotify
     obsidian
-    ranger # file system
     element-desktop
     ledger-live-desktop
   ];
@@ -25,7 +24,7 @@
       };
       "[json]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
       "editor.minimap.enabled" = false;
-      "editor.fontSize" = 16;
+      "editor.fontSize" = 15;
       "editor.lineHeight" = 24;
       "editor.fontFamily" = "Hasklig, monospace";
       "editor.fontLigatures" = true;
@@ -39,16 +38,17 @@
 
       "purescript.formatter" = "purs-tidy";
 
+      "settingsSync.keybindingsPerPlatform" = false;
+
       "telemetry.telemetryLevel" = "off";
 
       "terminal.external.linuxExec" = "alacritty";
       "terminal.integrated.drawBoldTextInBrightColors" = false;
-      "terminal.integrated.fontSize" = 16;
+      "terminal.integrated.fontSize" = 15;
 
       "update.mode" = "manual";
 
       "window.menuBarVisibility" = "toggle";
-      "window.zoomLevel" = 0.5;
 
       "workbench.colorTheme" = "Nord";
     };

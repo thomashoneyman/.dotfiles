@@ -24,7 +24,10 @@
 
       pkgs = import nixpkgs {
         inherit system;
-        config = { allowUnfree = true; };
+        config = {
+          allowUnfree = true;
+          permittedInsecurePackages = [ "nodejs-12.22.12" ];
+        };
       };
 
       pursPkgs = import easy-purescript-nix { inherit pkgs; };
@@ -72,7 +75,6 @@
           modules = [
             {
               nixpkgs.overlays = overlays;
-              nixpkgs.config.allowUnfree = true;
               system.stateVersion = "21.11";
             }
 

@@ -5,10 +5,14 @@ while [ "$1" ]; do
     help)
       printf "\033[0;32musage: \033[0;0mhey \033[38;5;8m[command]\n\n"
       printf "\033[0;32mavailable commands:\033[0;0m\n"
+      printf "    power\n"
       printf "    update\n"
       printf "    user\n"
       printf "    system\n"
       printf "    upgrade\n"
+      exit ;;
+    power)
+      sudo systemctl start system76-power
       exit ;;
     update)
       nix flake update "$HOME/.dotfiles" --commit-lock-file

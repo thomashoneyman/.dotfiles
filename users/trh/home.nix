@@ -3,6 +3,7 @@
 {
   imports = [
     # Auto-loading modules
+    ../../modules/desktop
     ../../modules/shell
     ../../modules/programs
 
