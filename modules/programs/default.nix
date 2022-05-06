@@ -24,7 +24,7 @@
       };
       "[json]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
       "editor.minimap.enabled" = false;
-      "editor.fontSize" = 15;
+      "editor.fontSize" = 14;
       "editor.lineHeight" = 24;
       "editor.fontFamily" = "Hasklig, monospace";
       "editor.fontLigatures" = true;
@@ -44,11 +44,12 @@
 
       "terminal.external.linuxExec" = "alacritty";
       "terminal.integrated.drawBoldTextInBrightColors" = false;
-      "terminal.integrated.fontSize" = 15;
+      "terminal.integrated.fontSize" = 14;
 
       "update.mode" = "manual";
 
       "window.menuBarVisibility" = "toggle";
+      "window.zoomLevel" = 0.5;
 
       "workbench.colorTheme" = "Nord";
     };
