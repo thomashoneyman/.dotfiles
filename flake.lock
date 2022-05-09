@@ -1,5 +1,27 @@
 {
   "nodes": {
+    "alejandra": {
+      "inputs": {
+        "flakeCompat": "flakeCompat",
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1649190206,
+        "narHash": "sha256-35hEJuMvRswOPKb9lbB9ZuHVe0eJN6WJc4T8Frn0hYQ=",
+        "owner": "kamadorueda",
+        "repo": "alejandra",
+        "rev": "d34bf2f62f09d10e5c9bf6444d181934f100708b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kamadorueda",
+        "ref": "1.2.0",
+        "repo": "alejandra",
+        "type": "github"
+      }
+    },
     "easy-purescript-nix": {
       "flake": false,
       "locked": {
@@ -16,6 +38,22 @@
         "type": "github"
       }
     },
+    "flakeCompat": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1648199409,
+        "narHash": "sha256-JwPKdC2PoVBkG6E+eWw3j6BMR6sL3COpYWfif7RVb8Y=",
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "rev": "64a525ee38886ab9028e6f61790de0832aa3ef03",
+        "type": "github"
+      },
+      "original": {
+        "owner": "edolstra",
+        "repo": "flake-compat",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -23,11 +61,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1651800560,
-        "narHash": "sha256-LUfR0/Fv8DA0uu8Uex2S1QcLiE4B5ylplbXmMs6/YoM=",
+        "lastModified": 1651886851,
+        "narHash": "sha256-kbXOJSf1uho0/7P54nZkJdJY3oAelIjyc6tfiRhaXJI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "538343be863cb0b9e9f1471e6dc09e0e140c7b3d",
+        "rev": "882bd8118bdbff3a6e53e5ced393932b351ce2f6",
         "type": "github"
       },
       "original": {
@@ -54,6 +92,7 @@
     },
     "root": {
       "inputs": {
+        "alejandra": "alejandra",
         "easy-purescript-nix": "easy-purescript-nix",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
