@@ -41,9 +41,26 @@
   };
 
   # Enable security keys
+  programs.ssh.startAgent = false;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
   services.pcscd.enable = true;
   services.udev.packages =
     [ pkgs.yubikey-personalization pkgs.ledger-udev-rules ];
+
+  environment.systemPackages = with pkgs; [
+    coreutils
+    usbutils
+    vim
+    zsh
+    gnupg
+    pinentry-curses
+    pinentry-qt
+    paperkey
+    wget
+  ];
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -66,7 +83,4 @@
     extraGroups = [ "wheel" "networkmanager" "docker" ];
     shell = pkgs.bash;
   };
-
-  # List packages installed in system profile. To search, run:
-  environment.systemPackages = with pkgs; [ coreutils usbutils vim zsh ];
 }

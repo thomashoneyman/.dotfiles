@@ -8,20 +8,11 @@
     tree
 
     # language-specific
-    nixfmt
+    alejandra
 
     # gpg
-    gnupg
-    pinentry_qt
     git-crypt
   ];
-
-  # GPG
-  programs.gpg.enable = true;
-  services.gpg-agent.enable = true;
-  services.gpg-agent.pinentryFlavor = "qt";
-
-  programs.ssh.enable = true;
 
   programs.alacritty.enable = true;
 

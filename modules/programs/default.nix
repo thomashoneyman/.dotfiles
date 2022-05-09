@@ -23,6 +23,7 @@
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
       "[json]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
+      "[nix]" = { "editor.defaultFormatter" = "alejandra"; };
       "editor.minimap.enabled" = false;
       "editor.fontSize" = 14;
       "editor.lineHeight" = 24;

@@ -8,6 +8,10 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    alejandra = {
+      url = "github:kamadorueda/alejandra/1.2.0";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Language
     easy-purescript-nix = {
@@ -18,7 +22,8 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, easy-purescript-nix, ... }:
+  outputs =
+    { self, nixpkgs, home-manager, easy-purescript-nix, alejandra, ... }:
     let
       system = "x86_64-linux";
 
@@ -46,9 +51,12 @@
             };
         });
 
-      purs-overlay = final: prev: { inherit pursPkgs; };
+      overlay = final: prev: {
+        inherit pursPkgs;
+        alejandra = alejandra;
+      };
 
-      overlays = [ purs-overlay ];
+      overlays = [ overlay ];
 
     in {
       homeManagerConfigurations = {
