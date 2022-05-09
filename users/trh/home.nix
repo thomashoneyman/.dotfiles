@@ -1,6 +1,9 @@
-{ config, pkgs, lib, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   imports = [
     # Auto-loading modules
     ../../modules/desktop
@@ -12,6 +15,5 @@
   ];
 
   # Enable optional modules here
-  config.modules = { dev = { purescript.enable = true; }; };
-
+  config.modules = {dev = {purescript.enable = true;};};
 }

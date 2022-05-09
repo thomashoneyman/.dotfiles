@@ -1,7 +1,9 @@
-{ config, pkgs, ... }:
-
 {
-  imports = [ ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [];
 
   home.packages = with pkgs; [
     # basic cli
@@ -21,6 +23,7 @@
   programs.starship = {
     enable = true;
     settings.character.success_symbol = "[➜](bold green)";
+
     settings.character.error_symbol = "[➜](bold red)";
   };
 
@@ -45,6 +48,7 @@
     };
   };
 
-  home.file.".bin".source = config.lib.file.mkOutOfStoreSymlink
+  home.file.".bin".source =
+    config.lib.file.mkOutOfStoreSymlink
     "${config.home.homeDirectory}/.dotfiles/bin";
 }

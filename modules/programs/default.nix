@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   home.packages = with pkgs; [
     discord
     spotify
@@ -18,19 +20,22 @@
   programs.vscode = {
     enable = true;
     userSettings = {
-      "[html]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
+      "[html]" = {"editor.defaultFormatter" = "esbenp.prettier-vscode";};
       "[javascript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
-      "[json]" = { "editor.defaultFormatter" = "esbenp.prettier-vscode"; };
-      "[nix]" = { "editor.defaultFormatter" = "alejandra"; };
+      "[json]" = {"editor.defaultFormatter" = "esbenp.prettier-vscode";};
+      "[nix]" = {
+        "editor.defaultFormatter" = "kamadorueda.alejandra";
+      };
+      "alejandra.program" = "alejandra";
       "editor.minimap.enabled" = false;
       "editor.fontSize" = 14;
       "editor.lineHeight" = 24;
       "editor.fontFamily" = "Hasklig, monospace";
       "editor.fontLigatures" = true;
       "editor.tabSize" = 2;
-      "editor.rulers" = [ 80 100 ];
+      "editor.rulers" = [80 100];
       "editor.formatOnSave" = true;
 
       "files.trimTrailingWhitespace" = true;

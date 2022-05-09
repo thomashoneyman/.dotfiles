@@ -1,7 +1,10 @@
-{ config, pkgs, ... }:
-
 {
-  imports = [ # Include the results of the hardware scan.
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
 
     # Include other modules
@@ -47,8 +50,7 @@
     enableSSHSupport = true;
   };
   services.pcscd.enable = true;
-  services.udev.packages =
-    [ pkgs.yubikey-personalization pkgs.ledger-udev-rules ];
+  services.udev.packages = [pkgs.yubikey-personalization pkgs.ledger-udev-rules];
 
   environment.systemPackages = with pkgs; [
     coreutils
@@ -70,7 +72,7 @@
   # Nix settings
   nix = {
     package = pkgs.nixFlakes;
-    trustedUsers = [ "root" "trh" "@wheel" ];
+    trustedUsers = ["root" "trh" "@wheel"];
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -80,7 +82,7 @@
   users.users.trh = {
     isNormalUser = true;
     initialPassword = "trh";
-    extraGroups = [ "wheel" "networkmanager" "docker" ];
+    extraGroups = ["wheel" "networkmanager" "docker"];
     shell = pkgs.bash;
   };
 }

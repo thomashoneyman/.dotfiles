@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   fonts.fonts = with pkgs; [
     hasklig
     source-code-pro
@@ -14,10 +16,10 @@
     antialias = true;
     hinting.enable = true;
     defaultFonts = {
-      monospace = [ "Hasklig" ];
-      sansSerif = [ "Source Sans Pro" ];
-      serif = [ "Source Serif Pro" ];
-      emoji = [ "Blobmoji" ];
+      monospace = ["Hasklig"];
+      sansSerif = ["Source Sans Pro"];
+      serif = ["Source Serif Pro"];
+      emoji = ["Blobmoji"];
     };
   };
 }

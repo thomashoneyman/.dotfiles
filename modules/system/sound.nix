@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Don't use pulseaudio by default
   # https://nixos.wiki/wiki/PipeWire
   sound.enable = false;
@@ -19,19 +21,19 @@
 
     media-session.config.bluez-monitor.rules = [
       {
-        matches = [{ "device.name" = "~bluez_card.*"; }];
+        matches = [{"device.name" = "~bluez_card.*";}];
         actions = {
           "update-props" = {
-            "bluez5.auto-connect" = [ "hfp_hf" "hsp_hs" "a2dp_sink" ];
+            "bluez5.auto-connect" = ["hfp_hf" "hsp_hs" "a2dp_sink"];
           };
         };
       }
       {
         matches = [
-          { "node.name" = "~bluez_input.*"; }
-          { "node.name" = "~bluez_output.*"; }
+          {"node.name" = "~bluez_input.*";}
+          {"node.name" = "~bluez_output.*";}
         ];
-        actions = { "node.pause-on-idle" = false; };
+        actions = {"node.pause-on-idle" = false;};
       }
     ];
   };

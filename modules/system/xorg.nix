@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   environment.gnome.excludePackages = [
     pkgs.gnome.cheese
     pkgs.gnome-photos
