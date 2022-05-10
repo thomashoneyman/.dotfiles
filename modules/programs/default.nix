@@ -11,8 +11,6 @@
     ledger-live-desktop
   ];
 
-  services.flameshot.enable = true;
-
   programs.firefox.enable = true;
 
   programs.brave.enable = true;

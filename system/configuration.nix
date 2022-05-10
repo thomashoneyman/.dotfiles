@@ -77,12 +77,10 @@
       "https://cache.nixos.org/"
       "https://nixcache.reflex-frp.org"
       "https://nixcache.chainweb.com"
-      "http://nixcache.kadena.io"
     ];
     binaryCachePublicKeys = [
       "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI="
       "nixcache.chainweb.com:FVN503ABX9F8x8K0ptnc99XEz5SaA4Sks6kNcZn2pBY="
-      "kadena-cache.local-1:8wj8JW8V9tmc5bgNNyPM18DYNA1ws3X/MChXh1AQy/Q="
     ];
     extraOptions = ''
       experimental-features = nix-command flakes
