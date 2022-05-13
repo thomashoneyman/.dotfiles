@@ -73,15 +73,6 @@
   nix = {
     package = pkgs.nixFlakes;
     trustedUsers = ["root" "trh" "@wheel"];
-    binaryCaches = [
-      "https://cache.nixos.org/"
-      "https://nixcache.reflex-frp.org"
-      "https://nixcache.chainweb.com"
-    ];
-    binaryCachePublicKeys = [
-      "ryantrinkle.com-1:JJiAKaRv9mWgpVAz8dwewnZe0AzzEAzPkagE9SP5NWI="
-      "nixcache.chainweb.com:FVN503ABX9F8x8K0ptnc99XEz5SaA4Sks6kNcZn2pBY="
-    ];
     extraOptions = ''
       experimental-features = nix-command flakes
     '';

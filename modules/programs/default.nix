@@ -9,6 +9,7 @@
     obsidian
     element-desktop
     ledger-live-desktop
+    slack
   ];
 
   programs.firefox.enable = true;

@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   environment.gnome.excludePackages = [
@@ -20,6 +21,11 @@
     pkgs.gnome-tour
     pkgs.gnome.geary
   ];
+
+  # Ensure yubikey gets its prompts
+  services.gnome.gnome-keyring.enable = lib.mkForce false;
+  # Ensure system76-power isn't overridden
+  services.power-profiles-daemon.enable = lib.mkForce false;
 
   services.xserver = {
     enable = true;

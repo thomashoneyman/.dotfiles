@@ -25,11 +25,11 @@
     "easy-purescript-nix": {
       "flake": false,
       "locked": {
-        "lastModified": 1651400038,
-        "narHash": "sha256-bwbpXSTD8Hf7tlCXfZuLfo2QivvX1ZDJ1PijXXRTo3Q=",
+        "lastModified": 1652381155,
+        "narHash": "sha256-uKMxTUTfDBgoPfn3LomGI5H6CbmHu6Cq/3M16jHC5jc=",
         "owner": "justinwoo",
         "repo": "easy-purescript-nix",
-        "rev": "0ad5775c1e80cdd952527db2da969982e39ff592",
+        "rev": "9a44ddfad868fe804e22973d32839c2f2167571c",
         "type": "github"
       },
       "original": {
@@ -61,11 +61,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1652214259,
-        "narHash": "sha256-kbribVik1m3SU6QNpZ3euybljqs0CEQ0lEEz7MN+u8U=",
+        "lastModified": 1652452043,
+        "narHash": "sha256-nh3mdVB/Kk5ag1uRMAlKo8r+ssN3HNxwbLsqRG4xZkw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "f735a8502b098962ae965c2600c7be9f7711b814",
+        "rev": "273598f53e04f0111dca5724b37640e3907edaaf",
         "type": "github"
       },
       "original": {
