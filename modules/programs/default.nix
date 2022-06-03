@@ -19,13 +19,23 @@
   programs.vscode = {
     enable = true;
     userSettings = {
-      "[html]" = {"editor.defaultFormatter" = "esbenp.prettier-vscode";};
+      "[css]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
+      "[html]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
       "[javascript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
-      "[json]" = {"editor.defaultFormatter" = "esbenp.prettier-vscode";};
+      "[json]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
       "[nix]" = {
         "editor.defaultFormatter" = "kamadorueda.alejandra";
+      };
+      "[typescriptreact]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
       "alejandra.program" = "alejandra";
       "editor.minimap.enabled" = false;
