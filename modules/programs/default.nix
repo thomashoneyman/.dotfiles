@@ -10,6 +10,7 @@
     element-desktop
     ledger-live-desktop
     slack
+    protonvpn-cli
   ];
 
   programs.firefox.enable = true;

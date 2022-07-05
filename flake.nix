@@ -41,46 +41,29 @@
 
     pursPkgs = import easy-purescript-nix {inherit pkgs;};
 
-    lib = nixpkgs.lib.extend (final: prev: let
-      inherit (lib) mkOption types;
-    in {
-      mkOpt = type: default: mkOption {inherit type default;};
-      mkOpt' = type: default: description:
-        mkOption {inherit type default description;};
-      mkBoolOpt = default:
-        mkOption {
-          inherit default;
-          type = types.bool;
-          example = true;
-        };
-    });
-
     overlay = final: prev: {
       inherit pursPkgs;
       alejandra = alejandra.defaultPackage.${system};
     };
 
     overlays = [overlay];
+
+    hm-configuration = {...}: {
+      nixpkgs.overlays = overlays;
+      imports = [./users/trh/home.nix];
+    };
   in {
     homeManagerConfigurations = {
       trh = home-manager.lib.homeManagerConfiguration {
-        inherit system pkgs;
-        username = "trh";
-        homeDirectory = "/home/trh";
-        stateVersion = "21.11"; # Don't change this value
-        configuration = {
-          home.stateVersion = "21.11"; # Don't change this value
-          programs.home-manager.enable = true;
-          nixpkgs.overlays = overlays;
-          imports = [./users/trh/home.nix];
-        };
+        inherit pkgs;
+        modules = [hm-configuration];
       };
     };
 
     # nixos-rebuild will automatically try to pair the host name from this
     # set with the host name of the system
     nixosConfigurations = {
-      mira = lib.nixosSystem {
+      mira = nixpkgs.lib.nixosSystem {
         inherit system pkgs;
 
         modules = [
@@ -98,9 +81,7 @@
             hardware.system76.enableAll = true;
             services.xserver.libinput.enable = false;
             services.xserver.videoDrivers = ["nvidia"];
-            virtualisation.podman.enable = true;
-            # Create a `docker` alias for podman, to use it as a drop-in replacement
-            virtualisation.podman.dockerCompat = true;
+            virtualisation.docker.enable = true;
           }
         ];
       };

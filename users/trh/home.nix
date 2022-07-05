@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{...}: {
   imports = [
     # Auto-loading modules
     ../../modules/desktop
@@ -14,6 +9,13 @@
     ../../modules/dev
   ];
 
-  # Enable optional modules here
-  config.modules = {dev = {purescript.enable = true;};};
+  config = {
+    home.stateVersion = "21.11"; # Don't change this value
+    home.username = "trh";
+    home.homeDirectory = "/home/trh";
+    programs.home-manager.enable = true;
+
+    # Enable optional modules here
+    modules = {dev = {purescript.enable = true;};};
+  };
 }
