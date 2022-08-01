@@ -72,7 +72,7 @@
   # Nix settings
   nix = {
     package = pkgs.nixFlakes;
-    trustedUsers = ["root" "trh" "@wheel"];
+    settings.trusted-users = ["root" "trh" "@wheel"];
     extraOptions = ''
       experimental-features = nix-command flakes
     '';

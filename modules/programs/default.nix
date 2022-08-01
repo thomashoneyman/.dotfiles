@@ -38,6 +38,9 @@
       "[typescriptreact]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
+      "[typescript]" = {
+        "editor.defaultFormatter" = "esbenp.prettier-vscode";
+      };
       "alejandra.program" = "alejandra";
       "editor.minimap.enabled" = false;
       "editor.fontSize" = 14;
