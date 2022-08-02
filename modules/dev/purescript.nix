@@ -18,7 +18,6 @@ in {
       pscid
       purescript-language-server
       pkgs.nodejs-16_x
-      pkgs.nodePackages.bower
     ];
   };
 }
