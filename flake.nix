@@ -33,14 +33,13 @@
   }: let
     system = "x86_64-linux";
 
-    pkgs =
-      nixpkgs.legacyPackages.${system}
-      // {
-        config = {
-          allowUnfree = true;
-          permittedInsecurePackages = ["nodejs-12.22.12"];
-        };
+    pkgs = import nixpkgs {
+      inherit system;
+      config = {
+        allowUnfree = true;
+        permittedInsecurePackages = ["nodejs-12.22.12"];
       };
+    };
 
     pursPkgs = import easy-purescript-nix {inherit pkgs;};
 
