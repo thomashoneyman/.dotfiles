@@ -3,10 +3,10 @@
 
   inputs = {
     # Nix-related
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager = {
-      url = "github:nix-community/home-manager/4c5106ed0f3168ff2df21b646aef67e86cbfc11c";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -19,7 +19,6 @@
     easy-purescript-nix = {
       url = "github:justinwoo/easy-purescript-nix";
       flake = false;
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
