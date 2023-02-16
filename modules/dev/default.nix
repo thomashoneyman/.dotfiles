@@ -1,3 +1,3 @@
 {...}: {
-  imports = [./purescript.nix];
+  imports = [./purescript.nix ./c.nix];
 }
