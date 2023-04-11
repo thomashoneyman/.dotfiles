@@ -7,6 +7,7 @@
     ledger-live-desktop
     slack
     protonvpn-cli
+    protonvpn-gui
     postman
   ];
 

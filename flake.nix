@@ -83,6 +83,7 @@
             services.xserver.libinput.enable = false;
             services.xserver.videoDrivers = ["nvidia"];
             virtualisation.docker.enable = true;
+            virtualisation.virtualbox.host.enable = true;
           }
         ];
       };
