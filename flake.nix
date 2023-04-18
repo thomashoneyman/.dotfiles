@@ -36,7 +36,7 @@
       inherit system;
       config = {
         allowUnfree = true;
-        permittedInsecurePackages = ["nodejs-12.22.12"];
+        permittedInsecurePackages = ["nodejs-12.22.12" "electron-21.4.0"];
       };
     };
 
@@ -83,7 +83,6 @@
             services.xserver.libinput.enable = false;
             services.xserver.videoDrivers = ["nvidia"];
             virtualisation.docker.enable = true;
-            virtualisation.virtualbox.host.enable = true;
           }
         ];
       };
