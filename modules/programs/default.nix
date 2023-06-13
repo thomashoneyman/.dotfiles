@@ -39,7 +39,9 @@
       "[typescript]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
+
       "alejandra.program" = "alejandra";
+
       "editor.minimap.enabled" = false;
       "editor.fontSize" = 14;
       "editor.lineHeight" = 24;
@@ -48,6 +50,7 @@
       "editor.tabSize" = 2;
       "editor.rulers" = [80 100];
       "editor.formatOnSave" = true;
+      "editor.inlineSuggest.enabled" = true;
 
       "files.trimTrailingWhitespace" = true;
       "files.trimFinalNewlines" = true;
@@ -66,6 +69,7 @@
       "update.mode" = "manual";
 
       "window.menuBarVisibility" = "toggle";
+      "window.titleBarStyle" = "custom";
       "window.zoomLevel" = 0.5;
 
       "workbench.colorTheme" = "Nord";
