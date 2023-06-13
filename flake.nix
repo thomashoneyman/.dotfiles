@@ -36,7 +36,7 @@
       inherit system;
       config = {
         allowUnfree = true;
-        permittedInsecurePackages = ["nodejs-12.22.12" "electron-21.4.0"];
+        permittedInsecurePackages = ["nodejs-12.22.12" "electron-21.4.0" "nodejs-16.20.0"];
       };
     };
 
