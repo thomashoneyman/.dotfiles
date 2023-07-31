@@ -11,12 +11,11 @@
 
     # language-specific
     alejandra
+    nodePackages.rush
 
     # gpg
     git-crypt
   ];
-
-  programs.alacritty.enable = true;
 
   programs.htop.enable = true;
 
