@@ -16,9 +16,9 @@
     };
 
     # Language
-    easy-purescript-nix = {
-      url = "github:justinwoo/easy-purescript-nix";
-      flake = false;
+    purescript-overlay = {
+      url = "github:thomashoneyman/purescript-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -26,7 +26,7 @@
     self,
     nixpkgs,
     home-manager,
-    easy-purescript-nix,
+    purescript-overlay,
     alejandra,
     ...
   }: let
@@ -40,14 +40,14 @@
       };
     };
 
-    pursPkgs = import easy-purescript-nix {inherit pkgs;};
-
     overlay = final: prev: {
-      inherit pursPkgs;
       alejandra = alejandra.defaultPackage.${system};
     };
 
-    overlays = [overlay];
+    overlays = [
+      overlay
+      purescript-overlay.overlays.default
+    ];
 
     hm-configuration = {...}: {
       nixpkgs.overlays = overlays;

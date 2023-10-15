@@ -8,7 +8,6 @@
     slack
     protonvpn-cli
     protonvpn-gui
-    postman
   ];
 
   programs.firefox.enable = true;

@@ -48,6 +48,10 @@
   services.pcscd.enable = true;
   services.udev.packages = [pkgs.yubikey-personalization pkgs.ledger-udev-rules];
 
+  # Mullvad
+  services.mullvad-vpn.enable = true;
+  services.mullvad-vpn.package = pkgs.mullvad-vpn;
+
   environment.systemPackages = with pkgs; [
     coreutils
     usbutils

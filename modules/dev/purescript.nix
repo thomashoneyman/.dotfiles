@@ -1,10 +1,8 @@
 {pkgs, ...}: {
-  home.packages = with pkgs.pursPkgs; [
-    purs
-    purs-tidy
-    spago
-    pscid
-    purescript-language-server
-    pkgs.nodejs-16_x
+  home.packages = [
+    pkgs.purs
+    pkgs.purs-tidy
+    pkgs.spago-unstable
+    pkgs.purescript-language-server
   ];
 }
