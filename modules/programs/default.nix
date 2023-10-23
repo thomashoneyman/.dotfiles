@@ -44,7 +44,7 @@
       "editor.minimap.enabled" = false;
       "editor.fontSize" = 14;
       "editor.lineHeight" = 24;
-      "editor.fontFamily" = "Hasklig, monospace";
+      "editor.fontFamily" = "IBM Plex Mono, Hasklig, monospace";
       "editor.fontLigatures" = true;
       "editor.tabSize" = 2;
       "editor.rulers" = [80 100];

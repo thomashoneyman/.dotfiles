@@ -5,6 +5,7 @@
 }: {
   fonts.packages = with pkgs; [
     hasklig
+    ibm-plex
     source-code-pro
     cascadia-code
     roboto
@@ -16,7 +17,7 @@
     antialias = true;
     hinting.enable = true;
     defaultFonts = {
-      monospace = ["Hasklig"];
+      monospace = ["IBM Plex Mono"];
       sansSerif = ["Source Sans Pro"];
       serif = ["Source Serif Pro"];
       emoji = ["Blobmoji"];
