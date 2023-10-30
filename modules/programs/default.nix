@@ -71,7 +71,7 @@
       "window.titleBarStyle" = "custom";
       "window.zoomLevel" = 0.5;
 
-      "workbench.colorTheme" = "Nord";
+      "workbench.colorTheme" = "Gruvbox Light Soft";
     };
   };
 }
