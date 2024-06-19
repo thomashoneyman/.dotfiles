@@ -56,6 +56,7 @@
       "files.insertFinalNewline" = true;
 
       "purescript.formatter" = "purs-tidy";
+      "purescript.buildCommand" = "spago build";
 
       "settingsSync.keybindingsPerPlatform" = false;
 
